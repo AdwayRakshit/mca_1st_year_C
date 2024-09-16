@@ -1,16 +1,20 @@
 #include <stdio.h>
 
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 int main() {
-    int n, t1 = 0, t2 = 1, nextTerm;
-
+    int n, i;
+    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
     printf("Enter the number of terms: ");
-    scanf("%d", &n);
 
-    for (int i = 1; i <= n; ++i) {
-        printf("%d ", t1);
-        nextTerm = t1 + t2;
-        t1 = t2;
-        t2 = nextTerm;
+    scanf("%d", &n);
+    
+    for (i = 0; i < n; i++) {
+        printf("%d ", fibonacci(i));
     }
 
     return 0;

@@ -1,32 +1,24 @@
 #include <stdio.h>
 
-int factorial(int n) {
-    int fact = 1;
-    for(int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    return fact;
+int find_max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int find_min(int a, int b) {
+    return (a < b) ? a : b;
 }
 
 int main() {
-    int num, temp, sum = 0, digit;
-    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    
-    temp = num;
-    while(temp > 0) {
-        digit = temp % 10;
-        sum += factorial(digit);
-        temp /= 10;
-    }
+    int num1, num2;
+        printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
 
-    if(sum == num) {
-        printf("%d is a strong number.\n", num);
-    } else {
-        printf("%d is not a strong number.\n", num);
-    }
+    int max = find_max(num1, num2);
+    int min = find_min(num1, num2);
+
+    printf("Maximum: %d\n", max);
+    printf("Minimum: %d\n", min);
 
     return 0;
 }
-

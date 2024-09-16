@@ -1,26 +1,20 @@
 #include <stdio.h>
 
-int main() {
-    int num, originalNum, reversedNum = 0, remainder;
-
-    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
-
-    printf("Enter an integer: ");
-    scanf("%d", &num);
-
-    originalNum = num;
-
-    while (num != 0) {
-        remainder = num % 10;
-        reversedNum = reversedNum * 10 + remainder;
-        num /= 10;
-    }
-
-    if (originalNum == reversedNum)
-        printf("%d is a palindrome.\n", originalNum);
+int power(int base, int exp) {
+    if (exp == 0)
+        return 1;
     else
-        printf("%d is not a palindrome.\n", originalNum);
-
-    return 0;
+        return base * power(base, exp - 1);
 }
 
+int main() {
+    int base, exp;
+         printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exp);
+
+    printf("%d^%d = %d\n", base, exp, power(base, exp));
+    return 0;
+}

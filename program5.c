@@ -1,35 +1,17 @@
 #include <stdio.h>
-#include <math.h>
 
-int main() {
-    int num, originalNum, remainder, n = 0;
-    float result = 0.0;
-
-    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
-
-    printf("Enter an integer: ");
-    scanf("%d", &num);
-
-    originalNum = num;
-
-    while (originalNum != 0) {
-        originalNum /= 10;
-        ++n;
-    }
-
-    originalNum = num;
-
-    while (originalNum != 0) {
-        remainder = originalNum % 10;
-        result += pow(remainder, n);
-        originalNum /= 10;
-    }
-
-    if ((int)result == num)
-        printf("%d is an Armstrong number.\n", num);
-    else
-        printf("%d is not an Armstrong number.\n", num);
-
-    return 0;
+int sumOfDigits(int n) {
+    if (n == 0)
+        return 0;
+    return (n % 10) + sumOfDigits(n / 10);
 }
 
+int main() {
+    int number;
+    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    int result = sumOfDigits(number);
+    printf("Sum of digits: %d\n", result);
+    return 0;
+}

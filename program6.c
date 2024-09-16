@@ -1,19 +1,20 @@
 #include <stdio.h>
 
-int main() {
-    float a, x, b, result;
-    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
-    
-    printf("Enter the values for a, x, and b: ");
-    scanf("%f %f %f", &a, &x, &b);
-    
-    if ((a * x - b) != 0) {
-        result = (a * x + b) / (a * x - b);
-        printf("The result is: %f\n", result);
-    } else {
-        printf("Division by zero error.\n");
-    }
-
-    return 0;
+void reverseNumber(int num) {
+    if (num == 0) 
+        return;
+    printf("%d", num % 10);
+    reverseNumber(num / 10);
 }
 
+int main() {
+    int number;
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+    if (number < 0) {
+        printf("-");
+        number = -number;
+    }
+    reverseNumber(number);
+    return 0;
+}

@@ -1,17 +1,15 @@
 #include <stdio.h>
 
+int sum(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n + sum(n - 1);
+}
+
 int main() {
-    int num, sum = 0;
-    printf("Name:Adway Mohan Rakshit MCA sec A roll 2\n");
-    printf("Enter a positive integer: ");
-    scanf("%d", &num);
-
-    while (num != 0) {
-        sum += num % 10;
-        num /= 10;
-    }
-
-    printf("Sum of the digits: %d\n", sum);
-
+    int result = sum(20);
+    printf("Name:Adway Mohan Rakshit MCA sec A roll 2");
+    printf("Sum of the first 20 natural numbers: %d\n", result);
     return 0;
 }
